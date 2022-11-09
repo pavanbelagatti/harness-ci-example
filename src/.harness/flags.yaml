@@ -20,7 +20,7 @@ featureFlags:
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "off"
+        state: "on"
       - identifier: preprod
         default:
           onVariation: "true"
