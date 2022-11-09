@@ -1,0 +1,30 @@
+featureFlags:
+  flags:
+  - flag:
+      name: test-fea
+      identifier: test_fea
+      description: ""
+      permanent: false
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: preprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: pre
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+  projectIdentifier: TerraformExample
+  orgIdentifier: default
