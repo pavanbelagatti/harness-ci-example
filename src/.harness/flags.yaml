@@ -16,6 +16,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: nonprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: preprod
         default:
           onVariation: "true"
