@@ -49,6 +49,17 @@ pipeline:
                   spec:
                     shell: Sh
                     command: To build the automated security testing
+              - step:
+                  type: Run
+                  name: Assertible
+                  identifier: Assertible
+                  spec:
+                    shell: Sh
+                    command: |-
+                      curl -u w4Wc649hish6ICC1: "https://assertible.com/deploy
+                          "service': "47224f7b-2d5e-4f77-828d-f4a4c23af6c8"
+                          "environment": "nonproduction",
+                          "version": "v1"
           platform:
             arch: Amd64
             os: Linux
