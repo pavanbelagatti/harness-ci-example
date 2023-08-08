@@ -44,13 +44,6 @@ pipeline:
                   type: Plugin
               - step:
                   type: Run
-                  name: Run_3
-                  identifier: Run_3
-                  spec:
-                    shell: Sh
-                    command: To build the automated security testing
-              - step:
-                  type: Run
                   name: Assertible
                   identifier: Assertible
                   spec:
