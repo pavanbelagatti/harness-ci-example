@@ -1,0 +1,62 @@
+pipeline:
+  identifier: Build_harness_ci_example_1691491638003
+  name: Build harness-ci-example
+  orgIdentifier: default
+  projectIdentifier: default_project
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1691491451111
+        repoName: Ava-Bhagya/harness-ci-example
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: npminstall
+                  name: npm_install
+                  spec:
+                    command: npm install
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: npmtest
+                  name: npm_test
+                  spec:
+                    command: npm run test
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: dockerbuild
+                  name: docker_build
+                  spec:
+                    image: plugins/docker
+                    settings:
+                      dry_run: "true"
+                      repo: hello/world
+                      tags: latest
+                  timeout: ""
+                  type: Plugin
+              - step:
+                  type: Run
+                  name: Assertible
+                  identifier: Assertible
+                  spec:
+                    shell: Sh
+                    command: |-
+                      curl -u w4Wc649hish6ICC1: "https://assertible.com/deploy
+                          "service': "47224f7b-2d5e-4f77-828d-f4a4c23af6c8"
+                          "environment": "nonproduction",
+                          "version": "v1"
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
